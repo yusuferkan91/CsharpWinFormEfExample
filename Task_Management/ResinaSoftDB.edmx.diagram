@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9e0bf793ca8f4a2591aefd55b7ff98d1" Name="Diagram1" >
+        <EntityTypeShape EntityType="ResinaSoftDB.Person" Width="1.5" PointX="0.875" PointY="2.5" />
+        <EntityTypeShape EntityType="ResinaSoftDB.PersonAddresses" Width="2.125" PointX="5.75" PointY="0.5" />
+        <EntityTypeShape EntityType="ResinaSoftDB.PersonelTask" Width="1.5" PointX="10" PointY="3" />
+        <EntityTypeShape EntityType="ResinaSoftDB.Task" Width="1.5" PointX="5.75" PointY="4" IsExpanded="true" />
+        <AssociationConnector Association="ResinaSoftDB.PersonPersonAddresses" />
+        <AssociationConnector Association="ResinaSoftDB.PersonPersonelTask" />
+        <AssociationConnector Association="ResinaSoftDB.TaskPersonelTask" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

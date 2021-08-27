@@ -1,0 +1,275 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ResinaSoftDB.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="ResinaSoftDBStoreContainer">
+    <EntitySet Name="Person" EntityType="ResinaSoftDB.Store.Person" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PersonAddresses" EntityType="ResinaSoftDB.Store.PersonAddresses" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PersonelTask" EntityType="ResinaSoftDB.Store.PersonelTask" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Task" EntityType="ResinaSoftDB.Store.Task" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="PersonPersonAddresses" Association="ResinaSoftDB.Store.PersonPersonAddresses">
+      <End Role="Person" EntitySet="Person" />
+      <End Role="PersonAddresses" EntitySet="PersonAddresses" />
+    </AssociationSet>
+    <AssociationSet Name="PersonPersonelTask" Association="ResinaSoftDB.Store.PersonPersonelTask">
+      <End Role="Person" EntitySet="Person" />
+      <End Role="PersonelTask" EntitySet="PersonelTask" />
+    </AssociationSet>
+    <AssociationSet Name="TaskPersonelTask" Association="ResinaSoftDB.Store.TaskPersonelTask">
+      <End Role="Task" EntitySet="Task" />
+      <End Role="PersonelTask" EntitySet="PersonelTask" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Person">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BirthDate" Type="datetime" Nullable="false" />
+    <Property Name="Gender" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PersonAddresses">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PersonId" Type="int" Nullable="false" />
+    <Property Name="AddressType" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CityId" Type="int" Nullable="false" />
+    <Property Name="Address" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PersonelTask">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PersonelId" Type="int" Nullable="false" />
+    <Property Name="TaskId" Type="int" Nullable="false" />
+    <Property Name="TaskStatus" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Task">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Deadline" Type="datetime" Nullable="false" />
+  </EntityType>
+  <Association Name="PersonPersonAddresses">
+    <End Role="Person" Type="ResinaSoftDB.Store.Person" Multiplicity="1" />
+    <End Role="PersonAddresses" Type="ResinaSoftDB.Store.PersonAddresses" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PersonAddresses">
+        <PropertyRef Name="PersonId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PersonPersonelTask">
+    <End Role="Person" Type="ResinaSoftDB.Store.Person" Multiplicity="1" />
+    <End Role="PersonelTask" Type="ResinaSoftDB.Store.PersonelTask" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PersonelTask">
+        <PropertyRef Name="PersonelId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TaskPersonelTask">
+    <End Role="Task" Type="ResinaSoftDB.Store.Task" Multiplicity="1" />
+    <End Role="PersonelTask" Type="ResinaSoftDB.Store.PersonelTask" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Task">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PersonelTask">
+        <PropertyRef Name="TaskId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ResinaSoftDB" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="ResinaSoftDBContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Person" EntityType="ResinaSoftDB.Person" />
+          <EntitySet Name="PersonAddresses" EntityType="ResinaSoftDB.PersonAddresses" />
+          <EntitySet Name="PersonelTask" EntityType="ResinaSoftDB.PersonelTask" />
+          <EntitySet Name="Task" EntityType="ResinaSoftDB.Task" />
+          <AssociationSet Name="PersonPersonAddresses" Association="ResinaSoftDB.PersonPersonAddresses">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="PersonAddresses" EntitySet="PersonAddresses" />
+          </AssociationSet>
+          <AssociationSet Name="PersonPersonelTask" Association="ResinaSoftDB.PersonPersonelTask">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="PersonelTask" EntitySet="PersonelTask" />
+          </AssociationSet>
+          <AssociationSet Name="TaskPersonelTask" Association="ResinaSoftDB.TaskPersonelTask">
+            <End Role="Task" EntitySet="Task" />
+            <End Role="PersonelTask" EntitySet="PersonelTask" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="LastName" Type="String" Nullable="false" />
+          <Property Name="BirthDate" Type="DateTime" Nullable="false" />
+          <Property Name="Gender" Type="String" Nullable="false" />
+          <NavigationProperty Name="PersonAddresses" Relationship="ResinaSoftDB.PersonPersonAddresses" FromRole="Person" ToRole="PersonAddresses" cg:GetterAccess="Private" />
+          <NavigationProperty Name="PersonelTask" Relationship="ResinaSoftDB.PersonPersonelTask" FromRole="Person" ToRole="PersonelTask" cg:GetterAccess="Private" />
+        </EntityType>
+        <EntityType Name="PersonAddresses">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonId" Type="Int32" Nullable="false" />
+          <Property Name="AddressType" Type="String" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="CityId" Type="Int32" Nullable="false" />
+          <Property Name="Address" Type="String" Nullable="false" />
+          <NavigationProperty Name="Person" Relationship="ResinaSoftDB.PersonPersonAddresses" FromRole="PersonAddresses" ToRole="Person" cg:GetterAccess="Private" />
+        </EntityType>
+        <EntityType Name="PersonelTask">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PersonelId" Type="Int32" Nullable="false" />
+          <Property Name="TaskId" Type="Int32" Nullable="false" />
+          <Property Name="TaskStatus" Type="String" Nullable="false" />
+          <NavigationProperty Name="Person" Relationship="ResinaSoftDB.PersonPersonelTask" FromRole="PersonelTask" ToRole="Person" cg:GetterAccess="Private" />
+          <NavigationProperty Name="Task" Relationship="ResinaSoftDB.TaskPersonelTask" FromRole="PersonelTask" ToRole="Task" cg:GetterAccess="Private" />
+        </EntityType>
+        <EntityType Name="Task">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" />
+          <Property Name="Description" Type="String" Nullable="false" />
+          <Property Name="Deadline" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="PersonelTask" Relationship="ResinaSoftDB.TaskPersonelTask" FromRole="Task" ToRole="PersonelTask" cg:GetterAccess="Private" />
+        </EntityType>
+        <Association Name="PersonPersonAddresses">
+          <End Type="ResinaSoftDB.Person" Role="Person" Multiplicity="1" />
+          <End Type="ResinaSoftDB.PersonAddresses" Role="PersonAddresses" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PersonAddresses">
+              <PropertyRef Name="PersonId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PersonPersonelTask">
+          <End Type="ResinaSoftDB.Person" Role="Person" Multiplicity="1" />
+          <End Type="ResinaSoftDB.PersonelTask" Role="PersonelTask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PersonelTask">
+              <PropertyRef Name="PersonelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="TaskPersonelTask">
+          <End Type="ResinaSoftDB.Task" Role="Task" Multiplicity="1" />
+          <End Type="ResinaSoftDB.PersonelTask" Role="PersonelTask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Task">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PersonelTask">
+              <PropertyRef Name="TaskId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ResinaSoftDBStoreContainer" CdmEntityContainer="ResinaSoftDBContainer">
+    <EntitySetMapping Name="Person">
+      <EntityTypeMapping TypeName="IsTypeOf(ResinaSoftDB.Person)">
+        <MappingFragment StoreEntitySet="Person">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonAddresses">
+      <EntityTypeMapping TypeName="IsTypeOf(ResinaSoftDB.PersonAddresses)">
+        <MappingFragment StoreEntitySet="PersonAddresses">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PersonId" ColumnName="PersonId" />
+          <ScalarProperty Name="AddressType" ColumnName="AddressType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PersonelTask">
+      <EntityTypeMapping TypeName="IsTypeOf(ResinaSoftDB.PersonelTask)">
+        <MappingFragment StoreEntitySet="PersonelTask">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="PersonelId" ColumnName="PersonelId" />
+          <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+          <ScalarProperty Name="TaskStatus" ColumnName="TaskStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Task">
+      <EntityTypeMapping TypeName="IsTypeOf(ResinaSoftDB.Task)">
+        <MappingFragment StoreEntitySet="Task">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Deadline" ColumnName="Deadline" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,17 @@
+C:\Users\YusufPC\source\repos\ResinaSoft_WinForm\Task_Management\bin\Debug\Task_Management.exe.config
+C:\Users\YusufPC\source\repos\ResinaSoft_WinForm\Task_Management\bin\Debug\Task_Management.exe
+C:\Users\YusufPC\source\repos\ResinaSoft_WinForm\Task_Management\bin\Debug\Task_Management.pdb
+C:\Users\YusufPC\source\repos\ResinaSoft_WinForm\Task_Management\bin\Debug\EntityFramework.dll
+C:\Users\YusufPC\source\repos\ResinaSoft_WinForm\Task_Management\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\YusufPC\source\repos\ResinaSoft_WinForm\Task_Management\bin\Debug\Textbox_custom.dll
+C:\Users\YusufPC\source\repos\ResinaSoft_WinForm\Task_Management\bin\Debug\Textbox_custom.pdb
+C:\Users\YusufPC\source\repos\ResinaSoft_WinForm\Task_Management\bin\Debug\EntityFramework.xml
+C:\Users\YusufPC\source\repos\ResinaSoft_WinForm\Task_Management\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\YusufPC\source\repos\ResinaSoft_WinForm\Task_Management\obj\Debug\Task_Management.csprojAssemblyReference.cache
+C:\Users\YusufPC\source\repos\ResinaSoft_WinForm\Task_Management\obj\Debug\Task_Management.Form1.resources
+C:\Users\YusufPC\source\repos\ResinaSoft_WinForm\Task_Management\obj\Debug\Task_Management.Properties.Resources.resources
+C:\Users\YusufPC\source\repos\ResinaSoft_WinForm\Task_Management\obj\Debug\Task_Management.csproj.GenerateResource.cache
+C:\Users\YusufPC\source\repos\ResinaSoft_WinForm\Task_Management\obj\Debug\Task_Management.csproj.CoreCompileInputs.cache
+C:\Users\YusufPC\source\repos\ResinaSoft_WinForm\Task_Management\obj\Debug\Task_Management.csproj.CopyComplete
+C:\Users\YusufPC\source\repos\ResinaSoft_WinForm\Task_Management\obj\Debug\Task_Management.exe
+C:\Users\YusufPC\source\repos\ResinaSoft_WinForm\Task_Management\obj\Debug\Task_Management.pdb

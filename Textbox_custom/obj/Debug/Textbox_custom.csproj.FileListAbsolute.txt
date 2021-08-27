@@ -1,0 +1,6 @@
+C:\Users\YusufPC\source\repos\ResinaSoft_WinForm\Textbox_custom\obj\Debug\Textbox_custom.csprojAssemblyReference.cache
+C:\Users\YusufPC\source\repos\ResinaSoft_WinForm\Textbox_custom\obj\Debug\Textbox_custom.csproj.CoreCompileInputs.cache
+C:\Users\YusufPC\source\repos\ResinaSoft_WinForm\Textbox_custom\bin\Debug\Textbox_custom.dll
+C:\Users\YusufPC\source\repos\ResinaSoft_WinForm\Textbox_custom\bin\Debug\Textbox_custom.pdb
+C:\Users\YusufPC\source\repos\ResinaSoft_WinForm\Textbox_custom\obj\Debug\Textbox_custom.dll
+C:\Users\YusufPC\source\repos\ResinaSoft_WinForm\Textbox_custom\obj\Debug\Textbox_custom.pdb
